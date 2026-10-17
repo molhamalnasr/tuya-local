@@ -3,6 +3,9 @@ products:
   - id: u8x8hhpomtchfyag
     manufacturer: Prosto
     model: WFU-T12PM
+  - id: vnya2spfopsh9lro
+    manufacturer: Teckin
+    model: SP22
 entities:
   - entity: switch
     class: outlet
@@ -13,6 +16,21 @@ entities:
       - id: 21
         type: bitfield
         name: factory_test
+        optional: true
+  - entity: sensor
+    category: diagnostic
+    hidden: true
+    class: energy
+    dps:
+      - id: 17
+        name: sensor
+        type: integer
+        unit: Wh
+        class: total_increasing
+        optional: true
+      - id: 25
+        type: integer
+        name: calibration
         optional: true
   - entity: sensor
     category: diagnostic
